@@ -17,6 +17,11 @@ public class SearchController {
 
     @FXML
     void getSearchResults(ActionEvent event) throws IOException, InterruptedException {
+        initialSongDataListView.getItems().clear();
+        initialSongDataListView.setVisible(true);
+
+            initialSongDataListView.getItems().addAll(
+                    APIUtility.getSongsFromAPI(searchTextField.getText()).getResponse());
 
     }
 

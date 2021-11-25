@@ -6,6 +6,9 @@ import com.google.gson.stream.JsonReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -35,4 +38,28 @@ public class APIUtility {
         return result;
     }
 
+    /**
+     * This method calls the Genius API and returns a GeniusResponse
+     */
+    public static GeniusResponse getSongsFromAPI(String searchText) throws IOException, InterruptedException {
+        GeniusResponse result = null;
+
+        searchText = searchText.replace(" ", "%20");
+
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://genius.p.rapidapi.com/search?q="+searchText))
+                .header("x-rapidapi-host", "genius.p.rapidapi.com")
+                .header("x-rapidapi-key", "5ac627ad53mshe8f071a953584ccp1b40fdjsn3ed5785de164")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+
+        HttpResponse<Path> response = client.send(request, HttpResponse.BodyHandlers
+                .ofFile(Paths.get("apiResponse.json")));
+
+        result = getSongsFromJSON();
+
+        return result;
+    }
 }
