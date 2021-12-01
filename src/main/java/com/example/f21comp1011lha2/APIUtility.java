@@ -23,6 +23,7 @@ public class APIUtility {
         Gson gson = new Gson();
         GeniusResponse result = null;
 
+        //create a FileReader that is passed into a JSONReader
         try(
                 FileReader fileReader = new FileReader("apiResponse.json");
                 JsonReader jsonReader = new JsonReader(fileReader);
@@ -59,7 +60,6 @@ public class APIUtility {
                 .ofFile(Paths.get("apiResponse.json")));
 
         result = getSongsFromJSON();
-
         return result;
     }
 }

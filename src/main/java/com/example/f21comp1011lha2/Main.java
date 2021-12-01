@@ -11,8 +11,8 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("search-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 580, 380);
         stage.setTitle("Search For Music!");
 
         //changes the icon to a music note
