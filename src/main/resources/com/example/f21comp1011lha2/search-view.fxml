@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.SearchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Search.SearchController">
    <children>
       <HBox layoutX="37.0" layoutY="14.0" prefHeight="50.0" prefWidth="503.0" spacing="5.0">
          <children>
@@ -44,7 +44,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <Button fx:id="detailsButton" mnemonicParsing="false" text="View Details">
+            <Button fx:id="detailsButton" mnemonicParsing="false" onAction="#getSongDetails" text="View Details">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

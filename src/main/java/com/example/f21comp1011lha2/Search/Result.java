@@ -1,4 +1,4 @@
-package com.example.f21comp1011lha2;
+package com.example.f21comp1011lha2.Search;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,6 +8,13 @@ public class Result {
 
     public String getFullTitle() {
         return fullTitle;
+    }
+
+    @SerializedName("id")
+    private int songID;
+
+    public int getSongID() {
+        return songID;
     }
 
     @SerializedName("song_art_image_url")

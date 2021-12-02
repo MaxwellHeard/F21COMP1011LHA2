@@ -1,6 +1,9 @@
 package com.example.f21comp1011lha2;
 
+import com.example.f21comp1011lha2.Details.DetailResponse;
+import com.example.f21comp1011lha2.Search.GeniusResponse;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.stream.JsonReader;
 
 import java.io.FileReader;
@@ -26,7 +29,7 @@ public class APIUtility {
         //create a FileReader that is passed into a JSONReader
         try(
                 FileReader fileReader = new FileReader("apiResponse.json");
-                JsonReader jsonReader = new JsonReader(fileReader);
+                JsonReader jsonReader = new JsonReader(fileReader)
         )
         {
             result = gson.fromJson(jsonReader, GeniusResponse.class);
@@ -61,5 +64,23 @@ public class APIUtility {
 
         result = getSongsFromJSON();
         return result;
+    }
+
+    /**
+     * This method calls the Genius API and returns song details
+     */
+    public static DetailResponse getSongDetails(int songID) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(("https://genius.p.rapidapi.com/songs/"+songID)))
+                .header("x-rapidapi-host", "genius.p.rapidapi.com")
+                .header("x-rapidapi-key", "5ac627ad53mshe8f071a953584ccp1b40fdjsn3ed5785de164")
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        Gson gson = new Gson();
+        return gson.fromJson(response.body(), DetailResponse.class);
     }
 }

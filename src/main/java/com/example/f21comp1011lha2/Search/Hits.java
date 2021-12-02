@@ -1,4 +1,4 @@
-package com.example.f21comp1011lha2;
+package com.example.f21comp1011lha2.Search;
 
 import com.google.gson.annotations.SerializedName;
 

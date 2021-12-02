@@ -1,4 +1,4 @@
-package com.example.f21comp1011lha2;
+package com.example.f21comp1011lha2.Search;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,6 +8,10 @@ public class Song {
 
     public String getArt() {
         return result.getSongArt();
+    }
+
+    public int getSongID() {
+        return result.getSongID();
     }
 
     @Override

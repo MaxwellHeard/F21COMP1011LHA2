@@ -1,5 +1,7 @@
-package com.example.f21comp1011lha2;
+package com.example.f21comp1011lha2.Search;
 
+import com.example.f21comp1011lha2.APIUtility;
+import com.example.f21comp1011lha2.SceneChanger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -69,6 +71,12 @@ public class SearchController implements Initializable {
                     }
                 }
         );
+    }
+
+    @FXML
+    private void getSongDetails(ActionEvent event) throws IOException {
+        int songID = initialSongDataListView.getSelectionModel().getSelectedItem().getSongID();
+        SceneChanger.changeScenes(event, "song-details-view.fxml","Movie Details!",songID);
     }
 
 }
