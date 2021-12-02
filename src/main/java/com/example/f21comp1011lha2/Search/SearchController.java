@@ -41,13 +41,12 @@ public class SearchController implements Initializable {
         initialSongDataListView.getItems().clear();
         initialSongDataListView.setVisible(true);
         errMsgLabel.setVisible(false);
-        try {
-            initialSongDataListView.getItems().addAll(
-                    APIUtility.getSongsFromAPI(searchTextField.getText()).getResponse().getHits());
-        } catch(NullPointerException e)
-        {
+        initialSongDataListView.getItems().addAll(
+                APIUtility.getSongsFromAPI(searchTextField.getText()).getResponse().getHits());
+
+        if (initialSongDataListView.getItems().size() <= 0)
             errMsgLabel.setVisible(true);
-        }
+
     }
 
     @Override

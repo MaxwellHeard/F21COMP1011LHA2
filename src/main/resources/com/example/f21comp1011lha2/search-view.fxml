@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="580.0" stylesheets="@Stylesheet/styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Search.SearchController">
+<AnchorPane prefHeight="380.0" prefWidth="580.0" stylesheets="@Stylesheet/styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Search.SearchController">
    <children>
       <HBox layoutX="37.0" layoutY="14.0" prefHeight="50.0" prefWidth="530.0" spacing="5.0">
          <children>

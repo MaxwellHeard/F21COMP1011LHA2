@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SongDetailsController implements Initializable, InitializesSong {
+public class SongDetailsController implements InitializesSong {
 
     @FXML
     private ImageView coverImageView;
@@ -32,27 +32,19 @@ public class SongDetailsController implements Initializable, InitializesSong {
     @FXML
     private ListView<Producer> producerListView;
 
-    @FXML
-    private Button backToSearch;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
     public void getSongDetails(String songID) {
         try {
             DetailResponse songDetails = APIUtility.getSongDetails(songID);
-            artistNameLabel.setText(songDetails.getResponse().getArtistNames());
-            songTitleLabel.setText(songDetails.getResponse().getTitle());
-/*            albumTitleLabel.setText(songDetails.getResponse().getAlbum());
-            producerListView.getItems().addAll(songDetails.getResponse().getProducers());
+            artistNameLabel.setText(songDetails.getResponse().getDetails().getArtistNames());
+            songTitleLabel.setText(songDetails.getResponse().getDetails().getTitle());
+            albumTitleLabel.setText(songDetails.getResponse().getDetails().getAlbum());
+            producerListView.getItems().addAll(songDetails.getResponse().getDetails().getProducers());
             try {
-                coverImageView.setImage(new Image(songDetails.getResponse().getSongArt()));
+                coverImageView.setImage(new Image(songDetails.getResponse().getDetails().getSongArt()));
             } catch (Exception e)
             {
                 coverImageView.setImage(new Image(getClass().getResourceAsStream("placeholder.jpg")));
-            }*/
+            }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }

@@ -76,9 +76,12 @@ public class APIUtility {
                 .uri(URI.create("https://genius.p.rapidapi.com/songs/"+songID))
                 .header("x-rapidapi-host", "genius.p.rapidapi.com")
                 .header("x-rapidapi-key", "5ac627ad53mshe8f071a953584ccp1b40fdjsn3ed5785de164")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
 
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
 
         Gson gson = new Gson();
         return gson.fromJson(response.body(), DetailResponse.class);
