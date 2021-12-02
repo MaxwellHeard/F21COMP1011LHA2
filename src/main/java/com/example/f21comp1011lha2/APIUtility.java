@@ -69,11 +69,11 @@ public class APIUtility {
     /**
      * This method calls the Genius API and returns song details
      */
-    public static DetailResponse getSongDetails(int songID) throws IOException, InterruptedException {
+    public static DetailResponse getSongDetails(String songID) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(("https://genius.p.rapidapi.com/songs/"+songID)))
+                .uri(URI.create("https://genius.p.rapidapi.com/songs/"+songID))
                 .header("x-rapidapi-host", "genius.p.rapidapi.com")
                 .header("x-rapidapi-key", "5ac627ad53mshe8f071a953584ccp1b40fdjsn3ed5785de164")
                 .build();

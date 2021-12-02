@@ -57,7 +57,6 @@ public class SearchController implements Initializable {
         initialSongDataListView.setVisible(false);
         coverImageView.setVisible(false);
 
-        //add a listener to the ListView of movies to show the poster art
         initialSongDataListView.getSelectionModel().selectedItemProperty().addListener(
                 (obs, old, songSelected) -> {
                     detailsButton.setVisible(true);
@@ -75,7 +74,7 @@ public class SearchController implements Initializable {
 
     @FXML
     private void getSongDetails(ActionEvent event) throws IOException {
-        int songID = initialSongDataListView.getSelectionModel().getSelectedItem().getSongID();
+        String songID = initialSongDataListView.getSelectionModel().getSelectedItem().getSongID();
         SceneChanger.changeScenes(event, "song-details-view.fxml","Movie Details!",songID);
     }
 

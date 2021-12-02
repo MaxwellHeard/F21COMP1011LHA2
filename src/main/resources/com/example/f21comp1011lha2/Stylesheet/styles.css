@@ -1,0 +1,11 @@
+/*change background colour*/
+.root {
+    -fx-background-color: #ffb5b5;
+    -fx-font-family: "Arial Rounded MT Bold";
+
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
+

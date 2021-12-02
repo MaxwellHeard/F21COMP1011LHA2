@@ -40,19 +40,19 @@ public class SongDetailsController implements Initializable, InitializesSong {
 
     }
 
-    public void getSongDetails(int songID) {
+    public void getSongDetails(String songID) {
         try {
             DetailResponse songDetails = APIUtility.getSongDetails(songID);
             artistNameLabel.setText(songDetails.getResponse().getArtistNames());
             songTitleLabel.setText(songDetails.getResponse().getTitle());
-            albumTitleLabel.setText(songDetails.getResponse().getAlbum());
+/*            albumTitleLabel.setText(songDetails.getResponse().getAlbum());
             producerListView.getItems().addAll(songDetails.getResponse().getProducers());
             try {
                 coverImageView.setImage(new Image(songDetails.getResponse().getSongArt()));
             } catch (Exception e)
             {
                 coverImageView.setImage(new Image(getClass().getResourceAsStream("placeholder.jpg")));
-            }
+            }*/
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
@@ -61,7 +61,6 @@ public class SongDetailsController implements Initializable, InitializesSong {
     @FXML
     public void returnToSearch(ActionEvent actionEvent) throws IOException {
         SceneChanger.changeScenes(actionEvent, "search-view.fxml", "Search For Music!");
-
     }
 
 }

@@ -12,16 +12,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Search.SearchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="580.0" stylesheets="@Stylesheet/styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Search.SearchController">
    <children>
-      <HBox layoutX="37.0" layoutY="14.0" prefHeight="50.0" prefWidth="503.0" spacing="5.0">
+      <HBox layoutX="37.0" layoutY="14.0" prefHeight="50.0" prefWidth="530.0" spacing="5.0">
          <children>
-            <Label prefHeight="29.0" prefWidth="107.0" text="Search Song:">
+            <Label prefHeight="29.0" prefWidth="124.0" styleClass="root" text="Search Song:">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="searchTextField" prefHeight="25.0" prefWidth="302.0" />
+            <TextField fx:id="searchTextField" prefHeight="25.0" prefWidth="311.0" styleClass="shadow" />
             <Button mnemonicParsing="false" onAction="#getSearchResults" text="Search">
                <HBox.margin>
                   <Insets left="10.0" />
@@ -32,10 +32,10 @@
             <Insets top="10.0" />
          </padding>
       </HBox>
-      <ListView fx:id="initialSongDataListView" layoutX="37.0" layoutY="64.0" prefHeight="262.0" prefWidth="260.0" />
-      <VBox alignment="CENTER" layoutX="340.0" layoutY="64.0" prefHeight="296.0" prefWidth="200.0">
+      <ListView fx:id="initialSongDataListView" layoutX="14.0" layoutY="64.0" prefHeight="262.0" prefWidth="286.0" styleClass="shadow" />
+      <VBox alignment="CENTER" layoutX="331.0" layoutY="64.0" prefHeight="296.0" prefWidth="200.0">
          <children>
-            <ImageView fx:id="coverImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="coverImageView" fitHeight="235.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
                <image>
                   <Image url="@Images/placeholder.jpg" />
                </image></ImageView>
@@ -51,7 +51,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="errMsgLabel" layoutX="104.0" layoutY="333.0" text="No Song Found">
+      <Label fx:id="errMsgLabel" layoutX="96.0" layoutY="338.0" styleClass="root" text="No Song Found">
          <font>
             <Font size="18.0" />
          </font>

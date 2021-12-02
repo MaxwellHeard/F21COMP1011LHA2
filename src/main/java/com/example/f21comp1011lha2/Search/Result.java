@@ -13,8 +13,8 @@ public class Result {
     @SerializedName("id")
     private int songID;
 
-    public int getSongID() {
-        return songID;
+    public String getSongID() {
+        return String.valueOf(songID);
     }
 
     @SerializedName("song_art_image_url")

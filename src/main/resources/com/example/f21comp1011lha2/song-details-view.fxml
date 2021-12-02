@@ -13,19 +13,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Details.SongDetailsController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@Stylesheet/styles.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lha2.Details.SongDetailsController">
    <children>
-      <ImageView fx:id="coverImageView" fitHeight="301.0" fitWidth="300.0" layoutX="270.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="coverImageView" fitHeight="301.0" fitWidth="300.0" layoutX="270.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" styleClass="shadow">
          <image>
             <Image url="@Images/placeholder.jpg" />
          </image>
       </ImageView>
       <VBox layoutX="16.0" layoutY="18.0" prefHeight="362.0" prefWidth="225.0">
          <children>
-            <GridPane prefHeight="161.0" prefWidth="225.0">
+            <GridPane prefHeight="161.0" prefWidth="225.0" styleClass="root">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="87.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="138.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="95.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="130.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -33,39 +33,39 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefWidth="225.0" text="Artist Names:">
+                  <Label prefWidth="225.0" styleClass="root" text="Artist Names:">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="Album Title:" GridPane.rowIndex="2">
+                  <Label styleClass="root" text="Album Title:" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="Song Title:" GridPane.rowIndex="1">
+                  <Label styleClass="root" text="Song Title:" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="artistNameLabel" text="Label" GridPane.columnIndex="1">
+                  <Label fx:id="artistNameLabel" styleClass="root" text="Label" GridPane.columnIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="songTitleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="songTitleLabel" styleClass="root" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="albumTitleLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label fx:id="albumTitleLabel" styleClass="root" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                </children>
             </GridPane>
-            <ListView fx:id="producerListView" prefHeight="164.0" prefWidth="225.0" />
+            <ListView fx:id="producerListView" prefHeight="164.0" prefWidth="225.0" styleClass="shadow" />
             <Button fx:id="backToSearch" mnemonicParsing="false" onAction="#returnToSearch" text="Return To Search">
                <VBox.margin>
                   <Insets top="10.0" />

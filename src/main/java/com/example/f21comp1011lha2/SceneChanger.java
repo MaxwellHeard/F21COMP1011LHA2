@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneChanger {
-    public static void changeScenes(ActionEvent event, String fxmlFile, String title, int songID) throws IOException {
+    public static void changeScenes(ActionEvent event, String fxmlFile, String title, String songID) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
         Scene scene = new Scene(fxmlLoader.load());
 

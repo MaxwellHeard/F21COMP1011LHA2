@@ -10,7 +10,7 @@ public class Song {
         return result.getSongArt();
     }
 
-    public int getSongID() {
+    public String getSongID() {
         return result.getSongID();
     }
 
