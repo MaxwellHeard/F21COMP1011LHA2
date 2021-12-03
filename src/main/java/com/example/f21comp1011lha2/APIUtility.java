@@ -19,14 +19,12 @@ public class APIUtility {
 
     /**
      * This method extracts the JSON from the file
-     *
      */
     public static GeniusResponse getSongsFromJSON()
     {
         Gson gson = new Gson();
         GeniusResponse result = null;
 
-        //create a FileReader that is passed into a JSONReader
         try(
                 FileReader fileReader = new FileReader("apiResponse.json");
                 JsonReader jsonReader = new JsonReader(fileReader)
@@ -80,8 +78,6 @@ public class APIUtility {
                 .build();
 
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-
-        System.out.println(response.body());
 
         Gson gson = new Gson();
         return gson.fromJson(response.body(), DetailResponse.class);

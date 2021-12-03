@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SceneChanger {
+    /**
+     * Changes scenes to song-details-view using a songID
+     */
     public static void changeScenes(ActionEvent event, String fxmlFile, String title, String songID) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
         Scene scene = new Scene(fxmlLoader.load());
@@ -24,6 +27,9 @@ public class SceneChanger {
         stage.show();
     }
 
+    /**
+     * Changes scenes back to search-view
+     */
     public static void changeScenes(ActionEvent event, String fxmlFile, String title) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxmlFile));
         Scene scene = new Scene(fxmlLoader.load());

@@ -44,6 +44,7 @@ public class SearchController implements Initializable {
         initialSongDataListView.getItems().addAll(
                 APIUtility.getSongsFromAPI(searchTextField.getText()).getResponse().getHits());
 
+        //API returns an empty array if no results are found
         if (initialSongDataListView.getItems().size() <= 0)
             errMsgLabel.setVisible(true);
 
@@ -76,5 +77,4 @@ public class SearchController implements Initializable {
         String songID = initialSongDataListView.getSelectionModel().getSelectedItem().getSongID();
         SceneChanger.changeScenes(event, "song-details-view.fxml","Movie Details!",songID);
     }
-
 }

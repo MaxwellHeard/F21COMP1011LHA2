@@ -7,6 +7,4 @@ public class DetailResponse {
     private SongDetails response;
 
     public SongDetails getResponse() {return response;}
-    public void setResponse(SongDetails response) {this.response = response;}
-
 }
